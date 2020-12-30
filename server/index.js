@@ -32,7 +32,3 @@ app.use('/api/tasks', require('./routes/tasks') );
 app.listen(port,'0.0.0.0', ()=>{
     console.log(`El servidor esta corriendo en el puerto: ${port}`);
 })
-
-// app.get('/', ( req, res ) =>{
-//     res.send("Página principal de server")
-// });
