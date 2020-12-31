@@ -20,7 +20,7 @@ app.use( express.json({
 }));
 
 // puerto Server
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 
 /***************** USERS ************************/
 app.use('/api/users', require('./routes/users') );
@@ -32,9 +32,9 @@ app.use('/api/projects', require('./routes/projects') );
 app.use('/api/tasks', require('./routes/tasks') );
 
 // start server 
-server.listen(process.env.port,'0.0.0.0', ()=>{
+server.listen(port,'0.0.0.0', ()=>{
     console.log("****************");
-    console.log(process.env.port);
+    console.log(process.env.PORT);
     console.log(port)
     console.log(`El servidor esta corriendo en el puerto: ${port}`);
     console.log("****************");
