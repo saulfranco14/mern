@@ -37,6 +37,6 @@ server.listen(port,'0.0.0.0', ()=>{
 })
 
 
-server.get('/', ( req, res ) =>{ 
+app.get('/', ( req, res ) =>{ 
     res.send("Página principal de server")
 });
