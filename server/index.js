@@ -1,18 +1,21 @@
 const express       = require('express');
+const http          = require('http');
 const connectionDB  = require('./config/db');
 const cors          = require('cors');
 
 //crea el servidor
 const app           = express();
+const server    = http.createServer(app);
+
 
 //conectar a la BD
 connectionDB();
 
 // CORS
-app.use( cors() );
+server.use( cors() );
 
 // Habilitar express.json
-app.use( express.json({
+server.use( express.json({
     extended : true
 }));
 
@@ -29,11 +32,11 @@ app.use('/api/projects', require('./routes/projects') );
 app.use('/api/tasks', require('./routes/tasks') );
 
 // start server 
-app.listen(port,'0.0.0.0', ()=>{
+server.listen(port,'0.0.0.0', ()=>{
     console.log(`El servidor esta corriendo en el puerto: ${port}`);
 })
 
 
-app.get('/', ( req, res ) =>{
+server.get('/', ( req, res ) =>{ 
     res.send("Página principal de server")
 });
