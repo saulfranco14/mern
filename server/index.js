@@ -32,8 +32,12 @@ app.use('/api/projects', require('./routes/projects') );
 app.use('/api/tasks', require('./routes/tasks') );
 
 // start server 
-server.listen('0.0.0.0',port, ()=>{
+server.listen(process.env.port,'0.0.0.0', ()=>{
+    console.log("****************");
+    console.log(process.env.port);
+    console.log(port)
     console.log(`El servidor esta corriendo en el puerto: ${port}`);
+    console.log("****************");
 })
 
 
