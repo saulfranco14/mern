@@ -12,10 +12,10 @@ const server    = http.createServer(app);
 connectionDB();
 
 // CORS
-server.use( cors() );
+app.use( cors() );
 
 // Habilitar express.json
-server.use( express.json({
+app.use( express.json({
     extended : true
 }));
 
