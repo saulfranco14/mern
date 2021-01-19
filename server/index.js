@@ -20,7 +20,7 @@ app.use( express.json({
 }));
 
 // puerto Server
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000;
 
 /***************** USERS ************************/
 app.use('/api/users', require('./routes/users') );
@@ -30,6 +30,16 @@ app.use('/api/auth', require('./routes/auth') );
 app.use('/api/projects', require('./routes/projects') );
 /***************** PROJECTS ************************/
 app.use('/api/tasks', require('./routes/tasks') );
+
+
+/*  #########################
+    ###### Natacion #########
+    ######################### 
+*/
+app.use('/api/role', require('./routes/natacion/role') );
+
+
+
 
 // start server 
 server.listen(port,'0.0.0.0', ()=>{

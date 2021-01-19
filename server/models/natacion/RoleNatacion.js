@@ -13,7 +13,7 @@ const RoleNatacionSchema = mongoose.Schema({
         type : String,
         required : true,
     },
-    decripcion : {
+    description : {
         type : String,
         required : false,
     },
